@@ -49,11 +49,11 @@ console.log(sum); */
 // console.log(capStr.join(" "));
 
 // sort method using for loop
-// let nums = [3, 5, 2, 6, 1, 8];
+// let nums = [3, 5, 2, 6, 1, 8, 7];
 // let len = nums.length;
 // let ascNum = [];
-// for (let i = 0; i < len - 1; i++) {
-//     for (let j = 0; j < len - i - 1; j++) {
+// for (let i = 0; i < len; i++) {
+//     for (let j = 0; j < len - i; j++) {
 //         if (nums[j] > nums[j + 1]) {
 //             let temp = nums[j];
 //             nums[j] = nums[j + 1];
@@ -61,8 +61,8 @@ console.log(sum); */
 //         }
 //     }
 // }
-// ascNum.push(...nums);
-// console.log(ascNum);
+// // ascNum.push(...nums);
+// console.log(nums);
 
 // Two Sum in LeetCode
 // const twoSum = function(nums, target){
@@ -204,20 +204,6 @@ console.log(sum); */
 // }
 // console.log(power(2 , 5))
 
-// let nums = [3, 5, 8, 12, 2, 4, 6, 45, 50, 45, 3, 5, 2];
-// nums.sort((a , b)=> a - b);
-// let uniqueNums = [...new Set(nums)]
-// console.log(uniqueNums)
-// let min = Math.min(...nums);
-// let max = Math.max(...nums);
-// let missNums = [];
-// for(let i = min + 1; i < max; i++){
-//   if(!nums.includes(i)){
-//     missNums.push(i)
-//   }
-// }
-// console.log(missNums);
-
 // function removeDuplicates(list) {
 //   list.sort((a, b) => a - b);
 //   let uniqueNums = [...new Set(list)];
@@ -248,9 +234,7 @@ console.log(sum); */
 //   if (arr.length === 0) {
 //       throw new Error("Array is empty");
 //   }
-
 //   let max = arr[0];
-
 //   for (let i = 1; i < arr.length; i++) {
 //       if (arr[i] > max) {
 //           max = arr[i];
@@ -265,18 +249,6 @@ console.log(sum); */
 // const largestNumber = findLargestNumber(numbers);
 // console.log(largestNumber); // Output: 12
 
-// function largestNum(arr) {
-//   let max = arr[0];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (max < arr[i]) {
-//       max = arr[i];
-//     }
-//   }
-//   return max;
-// }
-
-// console.log(largestNum([2, 42, 13, 23, 1, 3, 24]));
-
 // function smallestNum(arr) {
 //   let min = arr[0];
 //   for (let i = 0; i < arr.length; i++) {
@@ -286,11 +258,10 @@ console.log(sum); */
 //   }
 //   return min;
 // }
-
 // console.log(smallestNum([2, 42, 13, 23, 1, 3, 24]));
 
 // Duplicating Numbers and Concating
-// let  A1= [1, 2, 3, 4, 1, 2, 3, 4 ]
+// let A1= [1, 2, 3, 4, 1, 2, 3, 4 ]
 // let A2= [5, 6, 7, 8]
 // let mergeArr = A1.concat(A2);
 // let removeDuplicates = [];
@@ -302,6 +273,15 @@ console.log(sum); */
 // }
 
 // console.log(removeDuplicates);
+
+// reverse numbers
+// let arr = [1, 2, 3, 4, 5, 6];
+// for(let start = 0 , end = arr.length-1; start<end; start++, end--){
+//   arr[start] = arr[start] + arr[end]; // 1 + 6 = 7
+//   arr[end] = arr[start] - arr[end]; // 7 - 6 = 1
+//   arr[start] = arr[start] - arr[end]; // 7 - 1 = 6
+// }
+// console.log(arr)
 
 // Find Common Element
 // function commonElements(arr1, arr2){
@@ -361,27 +341,6 @@ console.log(sum); */
 // });
 // console.log(changedName);
 
-// function commonElements(arr1, arr2){
-//   let result = [];
-//   for(let i = 0; i < arr1.length; i++){
-//     for(let j = 0; j < arr2.length; j++){
-//       if(arr1[i] === arr2[j]){
-//         if(!result.includes(arr1[i])){
-//           result.push(arr1[i])
-//         }
-//         break;
-//       }
-//     }
-//   }
-//   return result
-// }
-
-// console.log(commonElements([1, 3, 4, 6, 7, 9], [1, 2, 3, 4, 7, 10]))
-
-// let n = [0, 1]
-// let fibo = n.reduce((prev, curr) => prev + curr)
-// console.log(fibo)
-
 // Find Minimum and Maximum value in an Array
 // let arr = Array.from({length : 10}, ()=> Math.floor(Math.random() * 100))
 // console.log(arr)
@@ -396,7 +355,7 @@ console.log(sum); */
 // }
 // console.log("Minimum Value:", min,"Maximum Value:", max)
 
-// Sum of Digits 
+// Sum of Digits
 // let num = 157621262;
 // let sum = 0;
 // while(num > 0){
@@ -406,18 +365,23 @@ console.log(sum); */
 // }
 // console.log(sum)
 
-// function fibo(n){
+// function fibo(n) {
 //   let prev = 0;
 //   let curr = 1;
-// for(let i = 2; i <= n; i++){
-//   let next = prev + curr;
-//   prev = curr;
-//   curr = next;
-//   console.log(curr) ;
+//   for (let i = 2; i <= n; i++) {
+//     let next = prev + curr;
+//     prev = curr;
+//     curr = next;
+//     console.log(curr);
+//   }
 // }
-
+// fibo(10);
+// Recursive
+// function Fibo(n){
+//   if(n < 2) return n;
+//   return Fibo(n - 1) + Fibo(n - 2);
 // }
-// (fibo(10))
+// console.log(Fibo(10))
 
 // Find Anagaram
 // function isAnagram(str1, str2){
@@ -445,3 +409,275 @@ console.log(sum); */
 //   }
 //   console.log(...arr)
 // }
+
+// function Factorial(n){
+//   if(n < 2) return 1;
+//   let fact = 1;
+//   for(let i = 2; i <= n; i++){
+//     fact = i * fact
+//   }
+//   return fact
+// }
+// console.log(Factorial(5))
+
+// function Factorial(n){
+//   if(n < 2) return 1;
+//   return n * Factorial(n - 1)
+// }
+// console.log(Factorial(5))
+
+// find the value of power
+// function power(x, y){
+//   if(y===0) return 1;
+//   if(y===1) return x;
+//   return x * power(x, y-1)
+// }
+// console.log(power(2, 5))
+// console.log(power(2, 3))
+
+// function power(x, y){
+//   if(y===0) return 1;
+//   if(y===1) return x;
+//   let pow = 1;
+//   for(let i = 1; i<= y; i++){
+//     pow *= x
+//   }
+//   return pow
+// }
+// console.log(power(2, 3))
+
+// const num1= [1, 3, 2, 4, 5, 6, 4, 6, 3, 4, 3];
+// const num2 = [ 3, 65, 2, 5, 5];
+// let result = [];
+// for(let i = 0; i < num1.length; i++){
+//   for(let j = 0; j < num2.length; j++){
+//     if(num1[i] === num2[j]){
+//       if(!result.includes(num1[i])){
+//         result.push(num1[i])
+//       }
+//     }
+//   }
+// }
+// for(let i = 0; i < num1.length; i++){
+//   if(result.indexOf(num1[i]) === -1){
+//     result.push(num1[i])
+//   }
+// }
+// console.log(result)
+
+// const num1= [1, 3, 2, 4, 5, 6, 4, 6, 3, 4, 3];
+// const num2 = [ 3, 65, 2, 5, 5];
+// let result = [];
+// for(let i = 0; i < num1.length; i++){
+//   if(num1[i] === 3){
+//     result.push([num1[i], i])
+//   }
+// }
+// console.log(result)
+
+// function linearSearch(arr, searchValue){
+//    for(let i = 0; i < arr.length; i++){
+//     if(arr[i] === searchValue){
+//       return i;
+//     }
+//    }
+//    return -1;
+// }
+// console.log(linearSearch([1, 2, 3, 4, 5, 6, 9], 3))
+// console.log(linearSearch([1, 3, 3, 4, 5, 3, 6, 9], 10))
+// console.log(linearSearch([1, 2, 3, 4, 5, 3, 6, 9], 9))
+
+// function binarySearch(arr, searchValue){
+//   let start = 0;
+//   let end = arr.length - 1;
+
+//   while (start <= end) {
+//     let mid = Math.floor((start + end) / 2);
+//     if(arr[mid] === searchValue){
+//       return mid;
+//     }
+//     if(arr[mid] < searchValue){
+//       start = mid + 1
+//     }else{
+//       end = mid - 1
+//     }
+//   }
+//   return - 1;
+// }
+// console.log(binarySearch([1, 2, 3, 4, 5, 6, 9], 3))
+// console.log(binarySearch([1, 3, 3, 4, 5, 3, 6, 9], 10))
+// console.log(binarySearch([1, 2, 3, 4, 5, 3, 6, 9], 9))
+
+// Bubble Sort using while loop
+// function BubbleSort(arr){
+//   let swapped = false;
+//   do{
+//     swapped = false;
+//     for(let i = 0; i < arr.length; i++){
+//       if(arr[i] > arr[i+1]){
+//         swapped = true;
+//         let temp = arr[i];
+//         arr[i] = arr[i + 1];
+//         arr[i+1] = temp;
+//       }
+//     }
+//   }while (swapped)
+//   return arr;
+// }
+// console.log(BubbleSort([1, 3, 5, 2, 4, 6, 8, 7, 10, 9]))
+
+// Selection Sort using for loop
+// function selectionSort(arr){
+//   for(let ind = 0; ind < arr.length; ind++){
+//     let minInd = ind;
+//     for(let ind1 = ind + 1; ind1 < arr.length; ind1++){
+//       if(arr[ind1] < arr[minInd]){
+//         minInd = ind1;
+//       }
+//     }
+//     if(minInd != ind){
+//       arr[minInd] ^= arr[ind];
+//       arr[ind] ^= arr[minInd];
+//       arr[minInd] ^= arr[ind]
+//     }
+//   }
+//   return arr;
+// }
+// let arr = [1, 3, 6, 7, 4, 5, 2];
+// console.log(selectionSort(arr));
+
+// let studentId = {
+//   "name" : "Hubert Michael Seelan",
+//   "age" : 24,
+//   "address": {
+//     street : "56/23, A3",
+//     area : "Mylapore",
+//     city : "Chennai",
+//     state : "Tamil Nadu",
+//     pincode : 600004
+//   },
+//   "birthYear" : function(getBirthYear){
+//     return new Date().getFullYear() - this.age;
+//   },
+//   "getFullAddress" : function(getFullAddress){
+//     let {street, area, city, state, pincode} = this.address;
+//     return `${this.name} Address: ${street} - ${area}, ${city}, ${state} - ${pincode}`;
+//   }
+// }
+
+// console.log(studentId.getBirthYear());
+// console.log(studentId.getFullAddress())
+
+// Find value
+// let nums = [1, 2, 3, 4] // [24, 12, 8, 6]
+// let result = [];
+// let totalProduct = 1;
+// for(let i = 0; i < nums.length; i++){
+//   totalProduct *= nums[i]
+// }
+// for(let i = 0; i < nums.length; i++){
+//   result.push(totalProduct / nums[i])
+// }
+// console.log(result)
+
+// var merge = function(num1, m, num2, n){
+//   let mergeArr = [];
+//   for(let i = 0; i < m; i++){
+//     mergeArr.push(num1[i])
+//   }
+//   for(let j = 0; j < n; j++){
+//     mergeArr.push(num2[j])
+//   }
+//   return mergeArr.sort()
+// }
+// // merge([1,2,3,0,0,0], 3, [2,5,6], 3); // [1,2,2,3,5,6]
+// console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3))
+
+// var merge = function(num1, m, num2, n){
+//   let mergeArr = num1.slice(0, m);
+//       mergeArr = mergeArr.concat(num2.slice(0, n))
+//   return mergeArr.sort()
+// }
+// // merge([1,2,3,0,0,0], 3, [2,5,6], 3); // [1,2,2,3,5,6]
+// console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3))
+
+// var romanToInt = function (s) {
+//   const symbol = {
+//     "I": 1,
+//     "V": 5,
+//     "X": 10,
+//     "L": 50,
+//     "C": 100,
+//     "D": 500,
+//     "M": 1000,
+//   };
+//   let total = 0;
+//   for(let i = 0; i < s.length; i++){
+//     let currVal = symbol[s[i]];
+//     let nextVal = symbol[s[i+1]];
+//     console.log(symbol[s[i]], symbol[s[i+1]])
+//     if(nextVal > currVal){
+//       total -= currVal;
+//     }else{
+//       total += currVal;
+//     }
+//   }
+//   // console.log(total);
+// };
+// romanToInt("III");
+// romanToInt("IV");
+
+// MRF
+// const nums = [1, 3, 4, 6, 2, 7, 8];
+// let oddNums = [];
+// let evenNums = [];
+// nums.map((d) => {
+//   if(d % 2 !== 0){
+//     oddNums.push(d);
+//   }else{
+//     evenNums.push(d)
+//   }
+// });
+// console.log(...nums.sort())
+// console.log("Odd Numbers: ", ...oddNums.sort() , "Even Numbers: ", ...evenNums.sort());
+
+// var longestCommonPrefix = function(strs) {
+//   let compare = strs[0];
+//     for(let i = 0; i < compare.length; i++){
+//       for(let j = 1; j < strs.length; j++){
+//         console.log(compare[i], strs[j])
+//       }
+//     }
+// };
+// longestCommonPrefix(["flower","flow","flight"]) //"fl"
+// // longestCommonPrefix(["dog","racecar","car"]) //""
+
+let arr1 = [1,2,3,4,5];
+
+let rotateArr = arr1.slice(-2).concat(arr1.slice(0,3))
+// let leftRotate = arr1.slice(2).concat(arr1.slice(0,2))
+console.log(rotateArr); // [4,5,1,2,3]
+function rotateArray(arr, direction, times) {
+  const len = arr.length;
+  console.log(len)
+  if (len === 0) return arr;
+  
+  // times = times % len; // Effective rotations
+
+  if (direction === 'right') {
+    return arr.slice(-times).concat(arr.slice(0, len - times)); // 5 - 2 = 3
+  } else if (direction === 'left') {
+    return arr.slice(times).concat(arr.slice(0, times)); // 
+  } else {
+    throw new Error('Invalid direction');
+  }
+}
+
+// Example usage:
+let arr = [1, 2, 3, 4, 5];
+
+let rotatedRight = rotateArray(arr, 'right', 2);
+console.log(rotatedRight); // [4, 5, 1, 2, 3]
+
+let rotatedLeft = rotateArray(arr, 'left', 2);
+console.log(rotatedLeft); // [3, 4, 5, 1, 2]
