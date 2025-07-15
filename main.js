@@ -240,7 +240,6 @@ console.log(sum); */
 //           max = arr[i];
 //       }
 //   }
-
 //   return max;
 // }
 
@@ -652,32 +651,77 @@ console.log(sum); */
 // longestCommonPrefix(["flower","flow","flight"]) //"fl"
 // // longestCommonPrefix(["dog","racecar","car"]) //""
 
-let arr1 = [1,2,3,4,5];
+// let arr1 = [1,2,3,4,5];
 
-let rotateArr = arr1.slice(-2).concat(arr1.slice(0,3))
+// let rotateArr = arr1.slice(-2).concat(arr1.slice(0,3))
 // let leftRotate = arr1.slice(2).concat(arr1.slice(0,2))
-console.log(rotateArr); // [4,5,1,2,3]
-function rotateArray(arr, direction, times) {
-  const len = arr.length;
-  console.log(len)
-  if (len === 0) return arr;
-  
-  // times = times % len; // Effective rotations
+// console.log(rotateArr); // [4,5,1,2,3]
+// function rotateArray(arr, direction, times) {
+//   const len = arr.length;
+//   console.log(len)
+//   if (len === 0) return arr;
 
-  if (direction === 'right') {
-    return arr.slice(-times).concat(arr.slice(0, len - times)); // 5 - 2 = 3
-  } else if (direction === 'left') {
-    return arr.slice(times).concat(arr.slice(0, times)); // 
-  } else {
-    throw new Error('Invalid direction');
-  }
-}
+//   // times = times % len; // Effective rotations
+
+//   if (direction === 'right') {
+//     return arr.slice(-times).concat(arr.slice(0, len - times)); // 5 - 2 = 3
+//   } else if (direction === 'left') {
+//     return arr.slice(times).concat(arr.slice(0, times)); //
+//   } else {
+//     throw new Error('Invalid direction');
+//   }
+// }
 
 // Example usage:
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 
-let rotatedRight = rotateArray(arr, 'right', 2);
-console.log(rotatedRight); // [4, 5, 1, 2, 3]
+// let rotatedRight = rotateArray(arr, 'right', 2);
+// console.log(rotatedRight); // [4, 5, 1, 2, 3]
 
-let rotatedLeft = rotateArray(arr, 'left', 2);
-console.log(rotatedLeft); // [3, 4, 5, 1, 2]
+// let rotatedLeft = rotateArray(arr, 'left', 2);
+// console.log(rotatedLeft); // [3, 4, 5, 1, 2]
+
+// How many Days in a Month
+// function FindDays(UserInput) {
+//   if(UserInput < 1 || UserInput > 12){
+//     return "Error"
+//   }
+//   switch (UserInput) {
+//     case 2:
+//       return 28;
+//     case 4:
+//     case 6:
+//     case 10:
+//     case 12:
+//       return 30;
+//     default:
+//       return 31
+//   }
+// }
+
+// function Circumference(radius){
+//   const pi = 3.141592653589793;
+//   let Circumference = 2 * pi * radius;
+//   return Circumference.toFixed(2);
+// }
+// console.log(Circumference(2));
+
+// function Multiple(n){
+//   let Multiple = [];
+//   for(let i = 1; i <= 3; i++){
+//     Multiple.push(n * i);
+//   }
+//   console.log(Multiple.join(" "));
+// }
+// Multiple(3)
+
+// function findLargestNumber(A, B, C){
+//   if(A > B){
+//     return A;
+//   }else if( B > C){
+//     return B;
+//   }else{
+//     return C;
+//   }
+// }
+// console.log(findLargestNumber(12, 42, 11)); 
