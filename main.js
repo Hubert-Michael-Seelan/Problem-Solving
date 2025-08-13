@@ -724,4 +724,150 @@ console.log(sum); */
 //     return C;
 //   }
 // }
-// console.log(findLargestNumber(12, 42, 11)); 
+// console.log(findLargestNumber(12, 42, 11));
+
+// var productNum = function(nums) {
+//   let product = nums.reduce((pvv, acc)=> pvv * acc, 1)
+//   let result = nums.map(num => product/num)
+//   console.log("Result",result)
+// }
+
+// let nums = [1, 2, 3, 4] // [24, 12, 8, 6]
+// productNum(nums)
+
+// Find the Missing Number
+
+// var missingNumber = function (arr) {
+//   if (arr.length <= 2) return "insert few more numbers in an array";
+//   // let min = arr[0];
+//   // let max = arr[0];
+//   let missingNumber = [];
+//   // for (let x of arr) {
+//   //   if (x < min) {
+//   //     min = x;
+//   //   } else if (x > max) {
+//   //     max = x;
+//   //   }
+//   // }
+//   let min = Math.min(...nums)
+//   let max = Math.max(...nums)
+//   const seen = new Set(arr);
+//   for (let i = min + 1; i < max; i++) {
+//     console.log(i)
+//     if (!seen.has(i)) {
+//       missingNumber.push(i);
+//     }
+//   }
+//   return missingNumber;
+// };
+
+// let nums = [1, 2, 3, 6, 8, 10];
+
+// Find Factorial Number
+// const factorial = function(num){
+//   if(num <= 1) return 1;
+//   if(num === 2) return 2;
+//   // let fact = 1;
+//   // for(let i = 2; i <= num; i++){
+//   //   fact *= i
+//   // }
+//   // return fact;
+//   return num * factorial(num - 1) // 5 * factorial(4)!
+// }
+// let n = 5;
+// console.log(factorial(n))
+
+// Sorting
+// const SortNumber = (arr) => {
+//   // ascNum = arr.sort((a, b) => a - b);
+//   ascNum = [];
+//   const len =  arr.length
+//   for(let i = 0; i < len - 1; i++){
+//     console.log("iter",arr[i])
+//     for(let j = 0; j < len - 1 - i; j++){
+//       console.log("iteration",arr[j] , arr[j+1])
+//       if(arr[j] > arr[j+1]) {
+//         // console.log(arr[j] , arr[j+1])
+//         [arr[j] , arr[j+1]]= [arr[j+1] , arr[j]]
+//         // [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//         // let temp = arr[j]
+//         // arr[j] = arr[j+1]
+//         // arr[j+1] = temp
+//       }
+//     }
+//     console.log("asc", arr)
+//   }
+//   // console.log(ascNum)
+// };
+
+// // let nums = [123, 2, 53, 23, 54, 25, 22, 556, 21];
+// let nums = [123, 2, 53];
+// SortNumber(nums);
+
+// const removeDuplicates = (arr) => {
+//   // let result = [...new Set(arr)];
+//   let result = [];
+//   let seen = new Set();
+//   let duplicateNums = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     const x = arr[i];
+//     if (!seen.has(x)) {
+//       seen.add(x);
+//       result.push(x);
+//     } else {
+//       duplicateNums.push(x)
+//     }
+//   }
+//   console.log(result.sort((a, b) => a - b));
+//   console.log(duplicateNums.sort((a, b) => a - b));
+// };
+// let nums = [123, 21, 123, 53, 23, 54, 25, 22, 556, 21, 53];
+// removeDuplicates(nums);
+
+// const rotateArray = (arr, direction, times) => {
+//   let result = [];
+//   if(direction === "left"){
+//    result = arr.slice(times).concat(arr.slice(0, times))
+//   } else {
+//     result = arr.slice(-times).concat(arr.slice(0, -times))
+//   }
+//   // console.log("Result",result)
+// }
+// const array = [1, 3, 5, 7, 9];
+// rotateArray(array, "left", 3)
+// rotateArray(array, "right", 1)
+// let result = array.slice(0, -1)
+// console.log(result)
+
+// const mostCommonWord = (paragraph, banned) => {
+//   let splitPara = paragraph.toLowerCase().replace(/[^a-z]/g, " ")
+//   return splitPara
+// }
+
+// const paragraph = "It's a square SqUare. It's a FLAT flat.";
+// const banned    = ["FLAT","IT","S"];
+
+// console.log(mostCommonWord(paragraph, banned));
+
+// const kidsWithCandies = (candies, extraCandies) => {
+//   // let maxCandies = Math.max(...candies);
+//   let maxCandies = candies[0];
+//   for(let x of candies){
+//     if(x > maxCandies){
+//       maxCandies = x
+//     }
+//   }
+//   const result = [];
+//   candies.forEach((element) => {
+//     if (element + extraCandies >= maxCandies) {
+//       result.push(true);
+//     } else {
+//       result.push(false);
+//     }
+//   });
+//   console.log(result)
+// };
+
+// const candies = [2,3,5,1,3];
+// const extraCandies = 3;
+// kidsWithCandies(candies, extraCandies);
